@@ -163,4 +163,5 @@ def delete_post():
     print("post is: ")
     db.session.commit()
     flash('Entry deleted')
-    redirect(request.url)
+    return redirect(url_for('index'))
+
