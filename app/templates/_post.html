@@ -1,0 +1,29 @@
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('user', username=post.author.username) }}">
+                <img src="{{ post.author.avatar(70) }}" />
+            </a>
+        </td>
+        <td>
+            <a href="{{ url_for('user', username=post.author.username) }}">
+                {{ post.author.username }}
+            </a>
+            says:
+            <br>
+            {{ post.body }}
+        </td>
+
+    </tr>
+
+    <td>
+        {% if currentUser == post.author.username %}
+        <form action="{{ url_for('delete_post') }}" method=post>
+            <input type="hidden" name="post_id" value="{{ post.id }}">
+            <input type="submit" value="Delete" />
+        </form>
+        {% endif %}
+    </td>
+
+
+</table>

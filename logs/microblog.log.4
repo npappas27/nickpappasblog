@@ -1,0 +1,112 @@
+2019-12-04 10:47:02,822 ERROR: Exception on /delete [POST] [in /Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1249, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/nickpappas/Desktop/microblog/app/routes.py", line 161, in delete_entry
+    Post.query.filter_by(id=postID).delete()
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3700, in delete
+    delete_op.exec_()
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1694, in exec_
+    self._do_exec()
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1922, in _do_exec
+    self._execute_stmt(delete_stmt)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1699, in _execute_stmt
+    self.result = self.query._execute_crud(stmt, self.mapper)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3367, in _execute_crud
+    return conn.execute(stmt, self._params)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1253, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1473, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1249, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.
+[SQL: DELETE FROM post WHERE post.id = ?]
+[parameters: (['13'])]
+(Background on this error at: http://sqlalche.me/e/rvf5)
+2019-12-04 10:47:30,824 INFO: Microblog startup [in /Users/nickpappas/Desktop/microblog/app/__init__.py:36]
+2019-12-04 10:47:33,491 ERROR: Exception on /delete [POST] [in /Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/nickpappas/Desktop/microblog/app/routes.py", line 160, in delete_entry
+    postID = [request.form['entry_id']].value
+AttributeError: 'list' object has no attribute 'value'
+2019-12-04 10:47:55,086 INFO: Microblog startup [in /Users/nickpappas/Desktop/microblog/app/__init__.py:36]
+2019-12-04 10:47:56,745 ERROR: Exception on /delete [POST] [in /Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/nickpappas/Desktop/microblog/app/routes.py", line 160, in delete_entry
+    postID = [request.form['entry_id']].first()
+AttributeError: 'list' object has no attribute 'first'
+2019-12-04 10:48:57,595 INFO: Microblog startup [in /Users/nickpappas/Desktop/microblog/app/__init__.py:36]
+2019-12-04 10:49:03,184 ERROR: Exception on /delete [POST] [in /Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/nickpappas/Desktop/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/nickpappas/Desktop/microblog/app/routes.py", line 160, in delete_entry
+    postID = [request.form['entry_id']].index(0)
+ValueError: 0 is not in list
+2019-12-04 10:49:20,095 INFO: Microblog startup [in /Users/nickpappas/Desktop/microblog/app/__init__.py:36]
