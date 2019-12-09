@@ -15,15 +15,15 @@
         </td>
 
     </tr>
-
+    {% if currentUser == post.author.username %}
     <td>
-        {% if currentUser == post.author.username %}
         <form action="{{ url_for('delete_post') }}" method=post>
             <input type="hidden" name="post_id" value="{{ post.id }}">
             <input type="submit" value="Delete" />
         </form>
-        {% endif %}
     </td>
+    {% endif %}
+
 
 
 </table>
